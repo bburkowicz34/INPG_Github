@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,8 @@ public class mushroom : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        other.transform.Translate(0f, 2f, 0f);
+        // other.transform.Translate(0f, 4f, 0f);
+        (other.GetComponent("Rigidbody2D") as Rigidbody2D).AddForce(Vector2.up * 6, ForceMode2D.Impulse);
     }
 }
 
