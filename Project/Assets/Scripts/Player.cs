@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    private Rigidbody2D rb;
+
     public float moveSpeed;
-    public float jumpHeight;
+    public float jumpVelocity;
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
 
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -15,46 +19,68 @@ public class Player : MonoBehaviour {
     private Animator anim;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 	}
 
     void FixedUpdate()
     {
         onGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatsGround);
-    }
-
-    // Update is called once per frame
-    void Update () {
 
         anim.SetBool("onGround", onGround);
-        
-        if(Input.GetKey(KeyCode.W) && onGround)
+
+        if(Input.GetKeyDown(KeyCode.W) && onGround)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+            rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+        }
+
+        if (rb.velocity.y < 0)
+        {
+            rb.gravityScale = fallMultiplier;
+        }
+
+        else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.W))
+        {
+            rb.gravityScale = lowJumpMultiplier;
+        }
+
+        else
+        {
+            rb.gravityScale = 1f;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
 
-        anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
 
-        if (GetComponent<Rigidbody2D>().velocity.x > 0)
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+
+        if (rb.velocity.x > 0)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
-        else if (GetComponent<Rigidbody2D>().velocity.x < 0)
+        else if (rb.velocity.x < 0)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
+    }
+
+    // Update is called once per frame
+    void Update () {
 
     }
 }
