@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
     private bool onGround;
 
     private Animator anim;
+    private bool isHoldingW = false;
 
 	// Use this for initialization
 	void Start ()
@@ -33,7 +34,12 @@ public class Player : MonoBehaviour {
 
         if(Input.GetKeyDown(KeyCode.W) && onGround)
         {
+        	isHoldingW = true;
             rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+        }
+
+        if(!Input.GetKey(KeyCode.W)) {
+        	isHoldingW = false;
         }
 
         if (rb.velocity.y < 0)
@@ -41,7 +47,7 @@ public class Player : MonoBehaviour {
             rb.gravityScale = fallMultiplier;
         }
 
-        else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.W))
+        else if (rb.velocity.y > 0 && !isHoldingW)
         {
             rb.gravityScale = lowJumpMultiplier;
         }
