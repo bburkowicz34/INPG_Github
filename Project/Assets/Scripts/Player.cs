@@ -19,12 +19,16 @@ public class Player : MonoBehaviour {
     private Animator anim;
     private bool isHoldingW = false;
 
-	// Use this for initialization
-	void Start ()
+    public Transform respawnPoint;
+
+    // Use this for initialization
+    void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-	}
+
+        rb.transform.position = respawnPoint.transform.position;
+    }
 
     void FixedUpdate()
     {
