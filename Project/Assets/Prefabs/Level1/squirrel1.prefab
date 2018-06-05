@@ -9,69 +9,62 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1795040812606026}
+  m_RootGameObject: {fileID: 1180330811405156}
   m_IsPrefabParent: 1
---- !u!1 &1795040812606026
+--- !u!1 &1180330811405156
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4334438980260434}
-  - component: {fileID: 212377822600972484}
-  - component: {fileID: 61705500399923842}
-  m_Layer: 9
-  m_Name: kaktus_gora
+  - component: {fileID: 4495081075154884}
+  - component: {fileID: 212220194418219072}
+  - component: {fileID: 95984321602412380}
+  m_Layer: 0
+  m_Name: squirrel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4334438980260434
+--- !u!4 &4495081075154884
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1795040812606026}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8970001, y: 0.99700004, z: 0}
+  m_GameObject: {fileID: 1180330811405156}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.527, y: 1.036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61705500399923842
-BoxCollider2D:
+--- !u!95 &95984321602412380
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1795040812606026}
+  m_GameObject: {fileID: 1180330811405156}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.09440923, y: -0.3069306}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5704379, y: 0.3861388}
-  m_EdgeRadius: 0
---- !u!212 &212377822600972484
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a34fd8f73880da44a95986f8a4be156e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &212220194418219072
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1795040812606026}
+  m_GameObject: {fileID: 1180330811405156}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -101,7 +94,7 @@ SpriteRenderer:
   m_SortingLayerID: 453157271
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 978a6fe1475990046b644c135dd27e5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1b72fc49e28b5b449c40d88498391aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
