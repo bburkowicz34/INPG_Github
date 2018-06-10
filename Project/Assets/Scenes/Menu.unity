@@ -1077,7 +1077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &818355095
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2282,7 +2282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1799833444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2358,9 +2358,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "The game has been developed by:\nKarolina Bu\u015Bko\nKamil Bialik\nAndrzej
-    Baraniak\nBart\u0142omiej Burkowicz\n\nGame has been developed as a project for
-    INPG\n\nAGH EAIIB 2018 "
+  m_text: 'The game has been developed by:
+
+    Karolina Busko
+
+    Kamil Bialik
+
+    Andrzej Baraniak
+
+    Bartlomiej Burkowicz
+
+
+    Game has been developed as a project for INPG
+
+
+    AGH EAIIB 2018 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
@@ -2431,7 +2443,7 @@ MonoBehaviour:
     characterCount: 161
     spriteCount: 0
     spaceCount: 28
-    wordCount: 28
+    wordCount: 26
     linkCount: 0
     lineCount: 9
     pageCount: 1
