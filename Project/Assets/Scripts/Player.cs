@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -86,6 +87,11 @@ public class Player : MonoBehaviour {
         else if (rb.velocity.x < 0)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
